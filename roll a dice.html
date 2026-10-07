@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Roll a Dice</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            background-color: rgb(103, 31, 197);
+            padding-top: 50px;
+        }
+
+        h1 {
+            color: black;
+        }
+
+        img {
+            width: 100px;
+            height: 10px;
+            border-radius: 10px;
+        }
+
+        #dice {
+            font-size: 100px;
+            margin: 30px;
+        }
+
+        button {
+            padding: 12px 25px;
+            font-size: 20px;
+            background-color: rgb(72, 144, 72);
+            color: white;
+            border: 2px solid blue;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: violet;
+        }
+
+        #result {
+            font-size: 22px;
+            color: white;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEUHKoB3GgL11xzRlx1D1hIXPsn-WUGUaklDrwG2b5oA&s=10">
+
+    <h1>🎲 Roll a Dice</h1>
+
+    <div id="dice">⚀</div>
+
+    <button onclick="rollDice()">Roll Dice</button>
+
+    <p id="result">Click the button to roll the dice</p>
+
+
+    <script> 
+ 
+        function rollDice() {
+
+            // Generate random number from 1 to 6
+            let number = Math.floor(Math.random() * 6) + 1;
+  
+            // Dice faces
+            let diceFaces = ["", "⚀", "⚁", "⚂", "⚃", "⚄", "⚅"];
+
+            // Display dice  
+            document.getElementById("dice").innerHTML =
+                diceFaces[number];
+
+            // Display result
+            document.getElementById("result").innerHTML =
+                "Your rolled number is: " + number;
+        }
+    </script>
+</body>
+</html>
